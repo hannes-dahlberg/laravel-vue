@@ -1,40 +1,33 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# Introduction
+Laravel-vue is my own take on using Laravel as a back-end API and VueJS as a front-end single page application.
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+The Laravel framework serves as a great API with eloquent and routing properties.
 
-## About Laravel
+# Installation
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+## Install packages
+Start by running `composer install` and then `npm install` to get all dependencies installed
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Laravel Homestead with Vagrant
+If you haven't already installed Vagrant with Virtualbox do this. Watch out for newest version of either since they have tend to break Laravel homestead in the past.
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
+Well installed run: (unix)`php vendor/bin/homestead make` (win)`vendor\\bin\\homestead make` to install project configs to use with Vagrant.
 
-## Learning Laravel
+Now you should be able to start your Vagrant dev-box with `vagrant up` and after initiated (takes a while the first time) you can SSH into your box with `vagrant ssh`
 
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
+## Passport
+The repo comes prepared with Passport (API authentication), you just need to install it. After successfully running `php artisan migrate` (migration) Install Passport using the command `php artisan passport:install`. The console will print "Password grant client created successfully." followed by "Client ID" and "Client Secret". Copy "Client Secret" and past in your `.env` file for the key `PASSPORT_PASSWORD_CLIENT_SECRET`. The "Client ID" is usually "2" but if not, copy whatever ID was printed and paste to `PASSPORT_PASSWORD_CLIENT_ID` in your `.env` file.
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+## Laravel Echo and Redis
+To broadcast event from Laravel to the front-end you will need the Laravel echo server running. Install (on dev-box) with `npm install laravel-echo-server -g` . You can now run the echo server using `npm run echo`. All commands are to be executed in the dev-box for this to work. Any configurations for laravel-echo-server can be found in `laravel-echo-server.json`.
 
-## Contributing
+# ~ Notice ~
+### Bluebird
+The library Bluebird will generate the warning "unreachable code after return statement" in some browsers (Firefox). [You can read about it here](http://stackoverflow.com/questions/24987896/how-does-bluebirds-util-tofastproperties-function-make-an-objects-properties). There's nothing wrong with the code but rather something to do with the Bluebird library.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+### laravel-echo
+Laravel-Echo is not intended to be used by a SPA in the first place but is easy to configure that way. Two things need to be changed:
+- The middleware for the Laravel broadcaster needs to be changed to use auth:api
+- The Echo object must include the api token in the header when register to listen to private channels.
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+[This article helped me on the right track](https://laravel.io/forum/10-09-2016-howto-broadcasting-laravel-echo-laravel-echo-server-and-jwt).
