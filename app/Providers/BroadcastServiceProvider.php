@@ -14,7 +14,10 @@ class BroadcastServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Broadcast::routes();
+        /*Since we're making an SPA we need to override
+        the broadcast route's middleware with the auth:api
+        middleware. Normaly a login session is required*/
+        Broadcast::routes(['middleware' => ['auth:api']]);
 
         require base_path('routes/channels.php');
     }

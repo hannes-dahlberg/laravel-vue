@@ -10,6 +10,7 @@ const translations = {
             'logout': 'Logout',
             'demo': {
                 'demo': 'Demo',
+                'events': 'Events',
                 'selectize': 'Selectize',
                 'tinymce': 'TinyMCE'
             },

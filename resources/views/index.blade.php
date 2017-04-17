@@ -7,6 +7,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>Laravel-Vue</title>
         <link rel="stylesheet" type="text/css" href="/css/app.css" />
+        <script src="{{ env('SOCKET_IO_URL') }}:6001/socket.io/socket.io.js"></script>
         <script src="/js/tinymce/tinymce.min.js"></script>
     </head>
     <body>

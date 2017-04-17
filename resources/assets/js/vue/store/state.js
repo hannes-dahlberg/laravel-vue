@@ -4,6 +4,8 @@ export default {
         { name: 'home', route: 'page.home' },
         { divider: true }, //Menu Divider
         { name: 'demo', menu: [
+            { name: 'events', route: 'demo.events' },
+            { divider: true }, //Menu Divider
             { name: 'selectize', route: 'demo.selectize' },
             { name: 'tinymce', route: 'demo.tinymce' }
         ]}
