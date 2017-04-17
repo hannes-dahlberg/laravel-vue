@@ -7,6 +7,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>Laravel-Vue</title>
         <link rel="stylesheet" type="text/css" href="/css/app.css" />
+        <script src="/js/tinymce/tinymce.min.js"></script>
     </head>
     <body>
         <div id="app">

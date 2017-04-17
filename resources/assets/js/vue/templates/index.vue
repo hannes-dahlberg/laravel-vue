@@ -13,9 +13,10 @@
 <script>
     import headerComponent from './components/header.vue'
     import footerComponent from './components/footer.vue'
+    import loader from './components/loader.vue'
 
     export default {
-        components: { headerComponent, footerComponent },
+        components: { headerComponent, footerComponent, loader },
         computed: {
             isAppLoading() {
                 return this.$store.getters.isAppLoading;

@@ -8,6 +8,11 @@ const translations = {
             'home': 'Home',
             'login': 'Login',
             'logout': 'Logout',
+            'demo': {
+                'demo': 'Demo',
+                'selectize': 'Selectize',
+                'tinymce': 'TinyMCE'
+            },
             'template': {
                 'template': 'TEMPLATE'
             }

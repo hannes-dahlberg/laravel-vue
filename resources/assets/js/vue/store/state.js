@@ -1,7 +1,12 @@
 export default {
     appLoading: false, //State for defining if the app is in a global loading stage or not
     menu: [ //Menu to render in navigation bar
-        { name: 'home', route: 'page.home' }
+        { name: 'home', route: 'page.home' },
+        { divider: true }, //Menu Divider
+        { name: 'demo', menu: [
+            { name: 'selectize', route: 'demo.selectize' },
+            { name: 'tinymce', route: 'demo.tinymce' }
+        ]}
     ],
     guestMenu: [ //Menu only available for guests
         { name: 'login', route: 'auth.login', position: 'right' }
