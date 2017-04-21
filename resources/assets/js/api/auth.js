@@ -5,5 +5,12 @@ export default {
                 resolve(response.data)
             }).catch(error => reject(error))
         })
+    },
+    socialAuth(payload) {
+        return new Promise((resolve, reject) => {
+            axios.get('/api/auth/' + payload.url).then(response => {
+                resolve(response.data)
+            }).catch(error => reject(error))
+        })
     }
 }

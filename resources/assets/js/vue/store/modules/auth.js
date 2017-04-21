@@ -38,6 +38,18 @@ export default {
             state.login = false
             state.user = null
             state.token = null
+        },
+        socialAuth({ state, dispatch }, routeQuery) {
+            if(!routeQuery.driver) { return }
+            return new Promise((resolve, reject) => {
+                auth.socialAuth({ url: routeQuery.driver + '/callback?code=' + routeQuery.code }).then(response => {
+                    //Call to set auth values
+                    dispatch('setAuth', { user: response.user, token: response.token })
+                    //Store auth values
+                    dispatch('storeAuth')
+                    resolve()
+                }).catch(error => reject(error))
+            })
         }
     },
     getters: {

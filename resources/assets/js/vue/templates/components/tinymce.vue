@@ -6,7 +6,6 @@
         props: ['value', 'disabled'],
         watch: {
             value(value) {
-                console.log('WATCH');
                 /*If the tinyMCE object exists (has been initiated), the value is actually set and not just null or false
                 and last check if the value of the tinyMCE object is not the same as the new value. Otherwise the tinyMCE
                 object will be updated each time itself is edited. We only want it to update on outside changes*/
