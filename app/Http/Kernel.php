@@ -56,6 +56,7 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'social.driver' => \App\Http\Middleware\SocialDriver::class
+        'social.driver' => \App\Http\Middleware\SocialDriver::class,
+        'auth_check' => \App\Http\Middleware\AuthCheck::class
     ];
 }
