@@ -12,7 +12,8 @@ class MakeUser extends Command {
      */
     protected $signature = 'make:user
         {email : The email of the new user}
-        {--password : Get prompted for password while otherwise auto generate password }';
+        {--password : Get prompted for password while otherwise auto generate password }
+        {--role= : Specify role for new user. "admin" or "user" (default) }';
 
     /**
      * The console command description.
@@ -49,7 +50,13 @@ class MakeUser extends Command {
             $password = str_random(8);
         }
 
-        User::create(['email' => $email, 'password' => Hash::make($password)]);
+        if($this->option('role') && in_array($this->option('role'), ['admin', 'user'])) {
+            $role = $this->option('role');
+        } else {
+            $role = 'user';
+        }
+
+        User::create(['email' => $email, 'password' => Hash::make($password), 'role' => $role]);
 
         if($this->option('password')) {
             $this->info('New user with email: "'. $email. '" was created');
