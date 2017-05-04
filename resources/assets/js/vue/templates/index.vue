@@ -1,12 +1,10 @@
 <template>
     <div>
         <header-component></header-component>
-        <div class="container">
-            <div v-if="isAppLoading" class="text-center margin-top-100">
-                <loader></loader>
-            </div>
-            <router-view v-else></router-view>
+        <div v-if="isAppLoading" class="text-center margin-top-100">
+            <loader></loader>
         </div>
+        <router-view v-else></router-view>
         <footer-component></footer-component>
     </div>
 </template>
