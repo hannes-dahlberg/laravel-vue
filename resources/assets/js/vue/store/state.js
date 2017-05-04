@@ -5,6 +5,7 @@ export default {
         { divider: true }, //Menu Divider
         { name: 'demo', menu: [
             { name: 'events', route: 'demo.events' },
+            { name: 'parallax', route: 'demo.parallax' },
             { divider: true }, //Menu Divider
             { name: 'selectize', route: 'demo.selectize' },
             { name: 'tinymce', route: 'demo.tinymce' }

@@ -11,11 +11,9 @@ const translations = {
             'demo': {
                 'demo': 'Demo',
                 'events': 'Events',
+                'parallax': 'Parallax',
                 'selectize': 'Selectize',
-                'tinymce': 'TinyMCE'
-            },
-            'template': {
-                'template': 'TEMPLATE'
+                'tinymce': 'TinyMCE',
             }
         }
     }

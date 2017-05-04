@@ -15,6 +15,7 @@ import authLogin from './templates/auth/login.vue'
 import authLogout from './templates/auth/logout.vue'
 
 import demoEvents from './templates/demo/events.vue'
+import demoParallax from './templates/demo/parallax.vue'
 import demoSelectize from './templates/demo/selectize.vue'
 import demoTinyMCE from './templates/demo/tinymce.vue'
 
@@ -26,6 +27,7 @@ const router = new VueRouter({
                 { path: '404', component: error404, name: 'error.404' }
             ]},
             { path: 'demo/events', component: demoEvents, name: 'demo.events'},
+            { path: 'demo/parallax', component: demoParallax, name: 'demo.parallax'},
             { path: 'demo/selectize', component: demoSelectize, name: 'demo.selectize'},
             { path: 'demo/tinymce', component: demoTinyMCE, name: 'demo.tinymce'},
             { path: 'login', component: authLogin, name: 'auth.login', beforeEnter: middleware.guest },
