@@ -1,15 +1,15 @@
 # Introduction
 Laravel-vue is my own take on using Laravel as a back-end API and VueJS as a front-end single page application.
 
-The Laravel framework serves as a great API with eloquent and routing properties.
+The Laravel framework serves as a great API with eloquent and routing properties while VueJS is a great choice for front end driven development.
 
 # Installation
 
 ## Install packages
-Start by running `composer install` and then `npm install` to get all dependencies installed
+Start by running `composer install` and then `npm install`.
 
 ## Laravel Homestead with Vagrant
-If you haven't already installed Vagrant with Virtualbox do this. Watch out for newest version of either since they have tend to break Laravel homestead in the past.
+If you haven't already installed Vagrant with VirtualBox do this. Watch out for newest version of either since they have tend to break Laravel homestead in the past. I've been running this with Vagrant V 1.9.2 and VirtualBox 5.1.14
 
 Well installed run: (unix)`php vendor/bin/homestead make` (win)`vendor\\bin\\homestead make` to install project configs to use with Vagrant.
 
@@ -23,7 +23,7 @@ To broadcast event from Laravel to the front-end you will need the Laravel echo 
 
 # ~ Notice ~
 ### Bluebird
-The library Bluebird will generate the warning "unreachable code after return statement" in some browsers (Firefox). [You can read about it here](http://stackoverflow.com/questions/24987896/how-does-bluebirds-util-tofastproperties-function-make-an-objects-properties). There's nothing wrong with the code but rather something to do with the Bluebird library.
+The library Bluebird will generate the warning "unreachable code after return statement" in some browsers (Firefox). [You can read about it here](http://stackoverflow.com/questions/24987896/how-does-bluebirds-util-tofastproperties-function-make-an-objects-properties). There's nothing wrong with the repo code but rather has something to do with the Bluebird library.
 
 ### laravel-echo
 Laravel-Echo is not intended to be used by a SPA in the first place but is easy to configure that way. Two things need to be changed:
