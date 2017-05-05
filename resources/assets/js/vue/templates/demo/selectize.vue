@@ -1,10 +1,10 @@
 <template>
-    <div class="container">
+    <div class="container margin-top-70">
         <div class="col-xs-12 col-md-4 col-md-offset-4">
             <div class="col-xs-12">
                 <h1>Selectize</h1>
                 <p>
-                    Selectize working with
+                    Selectize working with VueJS model binding
                 </p>
             </div>
             <div class="col-xs-12">

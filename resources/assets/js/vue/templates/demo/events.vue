@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container margin-top-70">
         <div class="col-xs-12">
             <h1>Events</h1>
             <div class="col-xs-6">

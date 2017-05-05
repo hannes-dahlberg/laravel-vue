@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container margin-top-70">
         <div class="col-xs-12 col-md-6 col-md-offset-3">
             <div class="col-xs-12">
                 <h1>TinyMCE</h1>

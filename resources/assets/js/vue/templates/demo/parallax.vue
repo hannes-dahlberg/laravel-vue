@@ -1,8 +1,8 @@
 <template>
     <div class="container-fluid padding-0">
         <div v-for="background in backgrounds">
-            <div v-parallax="{ speed: 0.5 }" style="height: 150vh" :style="{ 'background-image': 'url(/img/' + background + ')' }"></div>
-            <div style="height: 300px; background-color: #fff"></div>
+            <div v-parallax="{ speed: 0.4 }" style="height: 150vh; background-size: cover" :style="{ 'background-image': 'url(/img/' + background + ')' }"></div>
+            <div style="height: 30vh; background-color: #fff"></div>
         </div>
     </div>
 </template>
