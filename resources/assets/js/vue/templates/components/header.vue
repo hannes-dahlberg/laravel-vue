@@ -1,6 +1,6 @@
 
 <template>
-    <nav class="navbar navbar-default navbar-fixed-top margin-0">
+    <nav v-navbar-fold="{ threshold: 50 }" class="navbar navbar-default navbar-fixed-top margin-0">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
