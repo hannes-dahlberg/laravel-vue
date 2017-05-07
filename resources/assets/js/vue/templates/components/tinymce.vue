@@ -1,5 +1,6 @@
 <template>
-    <textarea></textarea>
+    <div v-if="inline"></div>
+    <textarea v-else></textarea>
 </template>
 <script>
     export default {
