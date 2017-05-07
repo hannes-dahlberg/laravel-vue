@@ -3,7 +3,7 @@
 </template>
 <script>
     export default {
-        props: ['value', 'disabled'],
+        props: ['value', 'disabled', 'inline'],
         watch: {
             value(value) {
                 /*If the tinyMCE object exists (has been initiated), the value is actually set and not just null or false
@@ -26,6 +26,7 @@
             tinymce.init({
                 selector: '#' + id,
                 theme: 'modern',
+                inline: this.inline,
                 width: '100%',
                 height: 300,
                 autoresize_min_height: 200,
