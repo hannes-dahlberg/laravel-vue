@@ -24,6 +24,9 @@
             getTexts() {
                 return new Promise((resolve, reject) => {
                     this.$store.dispatch('getTexts').then(() => {
+                        if(['home', 'about', 'contact'].indexOf(this.$route.name) != -1) {
+                            $(window).scrollTop(Math.ceil($('a[name=\'' + this.$route.name + '\']').offset().top - 100))
+                        }
                         resolve();
                     }).catch(() => reject())
                 })
