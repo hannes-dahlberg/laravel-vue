@@ -21,6 +21,9 @@ The repo comes prepared with Passport (API authentication), you just need to ins
 ## Laravel Echo and Redis
 To broadcast event from Laravel to the front-end you will need the Laravel echo server running. Install (on dev-box) with `npm install laravel-echo-server -g` . You can now run the echo server using `npm run echo`. All commands are to be executed in the dev-box for this to work. Any configurations for laravel-echo-server can be found in `laravel-echo-server.json`.
 
+## TinyMCE with responsivefilemanager
+This repo comes prepared with a TinyMCE component for VueJS using the responsivefilemanager add-on. For the responsivefilemanager to work PHP-GD needs to be installed. [Check PHP.net for more info](http://php.net/manual/en/image.installation.php)
+
 # ~ Notice ~
 ### Bluebird
 The library Bluebird will generate the warning "unreachable code after return statement" in some browsers (Firefox). [You can read about it here](http://stackoverflow.com/questions/24987896/how-does-bluebirds-util-tofastproperties-function-make-an-objects-properties). There's nothing wrong with the repo code but rather has something to do with the Bluebird library.
