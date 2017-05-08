@@ -33,9 +33,9 @@
                 autoresize_min_height: 200,
                 autoresize_max_height: 800,
                 plugins: [
-                    'lists autolink link responsivefilemanager autoresize'
+                    'lists autolink link responsivefilemanager autoresize image media code hr'
                 ],
-                toolbar1: 'saveButton undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link',
+                toolbar1: 'saveButton undo redo | styleselect | bold italic | image  media | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link | code',
                 image_advtab: true ,
                 external_filemanager_path:'/filemanager/',
                 filemanager_title:'Responsive Filemanager' ,
