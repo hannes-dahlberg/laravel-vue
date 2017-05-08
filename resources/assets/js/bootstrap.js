@@ -17,7 +17,7 @@ window.axios.defaults.headers.common = {
     'X-Requested-With': 'XMLHttpRequest'
 };
 
-window.Echo = new Echo({
+/*window.Echo = new Echo({
     broadcaster: 'socket.io',
     host: 'socketio.app:6001'
-})
+})*/

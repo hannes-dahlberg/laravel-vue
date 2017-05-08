@@ -3,17 +3,15 @@ import VueI18n from 'vue-i18n'
 
 const translations = {
     'en': {
-        'brand': 'Laravel-Vue',
+        'brand': 'DWIK',
         'menu': {
             'home': 'Home',
-            'login': 'Login',
+            'about': 'About Us',
+            'contact': 'Contact',
             'logout': 'Logout',
-            'demo': {
-                'demo': 'Demo',
-                'events': 'Events',
-                'parallax': 'Parallax',
-                'selectize': 'Selectize',
-                'tinymce': 'TinyMCE',
+            'auth': {
+                'login': 'Login',
+                'logout': 'Logout'
             }
         }
     }

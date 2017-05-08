@@ -9,30 +9,27 @@ import index from './templates/index.vue'
 import errorIndex from './templates/error/index.vue'
 import error404 from './templates/error/404.vue'
 
-import pageHome from './templates/pages/home.vue'
-
 import authLogin from './templates/auth/login.vue'
 import authLogout from './templates/auth/logout.vue'
 
-import demoEvents from './templates/demo/events.vue'
-import demoParallax from './templates/demo/parallax.vue'
-import demoSelectize from './templates/demo/selectize.vue'
-import demoTinyMCE from './templates/demo/tinymce.vue'
+import pages from './templates/pages/index.vue'
 
 const router = new VueRouter({
     mode: 'history',
+    scrollBehavior: function(to, from, savedPosition) {
+        if(!to.params.scroll) {
+            if($('a[name=\'' + to.name + '\']').length) {
+                return { x: 0, y: Math.ceil($('a[name=\'' + to.name + '\']').offset().top - 100) }
+            }
+        }
+    },
     routes: [
-        { path: '/', component: index, children: [
-            { path: 'error', component: errorIndex, children: [
-                { path: '404', component: error404, name: 'error.404' }
-            ]},
-            { path: 'demo/events', component: demoEvents, name: 'demo.events'},
-            { path: 'demo/parallax', component: demoParallax, name: 'demo.parallax'},
-            { path: 'demo/selectize', component: demoSelectize, name: 'demo.selectize'},
-            { path: 'demo/tinymce', component: demoTinyMCE, name: 'demo.tinymce'},
+        { path: '/', component: index, name: 'index', children: [
             { path: 'login', component: authLogin, name: 'auth.login', beforeEnter: middleware.guest },
             { path: 'logout', component: authLogout, name: 'auth.logout', beforeEnter: middleware.auth },
-            { path: '/', component: pageHome, name: 'page.home' },
+            { path: '/home', component: pages, name: 'home', hash: 'home' },
+            { path: '/about', component: pages, name: 'about', hash: 'about' },
+            { path: '/contact', component: pages, name: 'contact', hash: 'contact' },
         ], beforeEnter: GuardsCheck([middleware.checkAuth, middleware.invalidRoute]) }
     ]
 })
@@ -75,7 +72,7 @@ axios.interceptors.response.use((response) => {
 }, (error) => {
     if(error.response.status == 401) {
         store.dispatch('logout')
-        router.push({ name: 'home' })
+        router.push({ name: 'index' })
 
     }
 })

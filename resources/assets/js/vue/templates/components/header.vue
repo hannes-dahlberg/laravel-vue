@@ -1,7 +1,6 @@
-
 <template>
-    <nav v-navbar-fold="{ threshold: 50 }" class="navbar navbar-default navbar-fixed-top margin-0">
-        <div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top margin-0 padding-xs-right-0 padding-sm-right-30 padding-md-right-30 padding-lg-right-30">
+        <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
@@ -9,11 +8,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <router-link class="navbar-brand" :to="{ name: 'page.home' }">{{ $t('brand') }}</router-link>
+                <a href="" class="navbar-brand hidden-sm hidden-md hidden-lg">
+                    {{ $t('menu.' + $route.name) }}
+                </a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <navbar :menu="menu"></navbar>
-                <navbar v-if="menuRight.length" :menu="menuRight" :right="true"></navbar>
             </div>
         </div>
     </nav>
@@ -25,10 +25,7 @@
         components: { navbar },
         computed: {
             menu() {
-                return this.$store.getters.getMenu.filter(item => item.position == 'left' || !item.position)
-            },
-            menuRight() {
-                return this.$store.getters.getMenu.filter(item => item.position == 'right')
+                return this.$store.getters.getMenu
             }
         },
         methods: {

@@ -7,11 +7,12 @@ import getters from './getters'
 
 //Import modules
 import auth from './modules/auth'
+import text from './modules/text'
 
 //Export new Vuex store
 export default new Vuex.Store({
     state,
     actions,
     getters,
-    modules: { auth }
+    modules: { auth, text }
 })

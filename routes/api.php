@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 
 Route::group(['namespace' => 'API', 'middleware' => 'auth_check'], function() {
     Route::group(['middleware' => 'auth:api'], function() {
+        Route::resource('text', TextController::class, ['only' => ['update']]);
         Route::get('auth/user', ['name' => 'auth.user', 'uses' => 'AuthController@getUser']);
         Route::post('event/private', ['name' => 'event.pirate', 'uses' => 'EventController@privateEvent']);
     });
@@ -16,4 +17,5 @@ Route::group(['namespace' => 'API', 'middleware' => 'auth_check'], function() {
         });
     });
     Route::post('event/public', ['name' => 'event.public', 'uses' => 'EventController@publicEvent']);
+    Route::resource('text', TextController::class, ['only' => ['index', 'show']]);
 });

@@ -105,7 +105,7 @@
                     password: this.form.password
                 }).then(() => { //Success
                     //Redirect to admin page
-                    this.$router.push({ name: 'page.home' })
+                    this.$router.push({ name: 'home' })
                 }).catch((error) => { //Error
                     //Setting error to true
                     this.error = 'login'

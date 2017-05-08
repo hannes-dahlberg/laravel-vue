@@ -1,6 +1,7 @@
 html {
     position: relative;
     min-height: 100%;
+    font-weight: 300;
 }
 body {
     margin: 0px 0px 200px;
@@ -11,6 +12,8 @@ body {
     height: 200px;
     padding: 10px;
     background-color: $footer-bg;
+    color: #D9DAD9;
+    font-size: 14pt;
     border: 1px solid $footer-border-color;
     position: absolute;
     bottom: 0px;

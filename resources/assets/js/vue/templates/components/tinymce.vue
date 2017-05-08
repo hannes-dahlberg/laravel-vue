@@ -4,7 +4,7 @@
 </template>
 <script>
     export default {
-        props: ['value', 'disabled', 'inline'],
+        props: ['value', 'disabled', 'inline', 'save'],
         watch: {
             value(value) {
                 /*If the tinyMCE object exists (has been initiated), the value is actually set and not just null or false
@@ -35,7 +35,7 @@
                 plugins: [
                     'lists autolink link responsivefilemanager autoresize'
                 ],
-                toolbar1: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link',
+                toolbar1: 'saveButton undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link',
                 image_advtab: true ,
                 external_filemanager_path:'/filemanager/',
                 filemanager_title:'Responsive Filemanager' ,
@@ -43,6 +43,21 @@
                     'filemanager' : '/filemanager/plugin.min.js'
                 },
                 setup: (editor) => {
+                    if(this.save) {
+                        var that = this;
+                        editor.addButton('saveButton', {
+                            text: 'Save',
+                            onclick: function() {
+                                this.text('Loading...')
+                                this.disabled(true)
+                                that.$emit('input', editor.getContent())
+                                that.save().then(() => {
+                                    this.text('Save');
+                                    this.disabled(false)
+                                })
+                            }
+                        })
+                    }
                     //Event listener for change
                     editor.on('change', (e) => {
                         /*When the TinyMCE editor is changed the vue directive set method

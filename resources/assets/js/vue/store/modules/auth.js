@@ -24,7 +24,9 @@ export default {
             state.token = payload.token
 
             //Setting the Echo header to include token needed when listening on private channels
-            Echo.connector.options.auth.headers['Authorization'] = 'Bearer ' + getters.getToken
+            if(window.Echo) {
+                Echo.connector.options.auth.headers['Authorization'] = 'Bearer ' + getters.getToken
+            }
 
             //Setting axios default header to include token for any future requests
             axios.defaults.headers.common['Authorization'] = 'Bearer ' + getters.getToken

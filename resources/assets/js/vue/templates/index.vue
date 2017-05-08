@@ -19,6 +19,11 @@
             isAppLoading() {
                 return this.$store.getters.isAppLoading;
             }
+        },
+        mounted() {
+            if(this.$route.name == 'index') {
+                this.$router.push({ name: 'home' })
+            }
         }
     }
 </script>
