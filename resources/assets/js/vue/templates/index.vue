@@ -24,6 +24,12 @@
             if(this.$route.name == 'index') {
                 this.$router.push({ name: 'home' })
             }
+
+            $('.nav a').on('click', function(){
+                if($('.navbar-toggle').css('display') !='none'){
+                    $(".navbar-toggle").trigger( "click" );
+                }
+            });
         }
     }
 </script>
