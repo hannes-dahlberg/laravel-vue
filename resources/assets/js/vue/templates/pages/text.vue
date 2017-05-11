@@ -1,5 +1,5 @@
 <template>
-    <div style="height: 100vh;">
+    <div style="min-height: 100vh;">
         <a :name="text.name"></a>
         <tinymce v-if="$parent.isAuth" v-model="text.content" :inline="true" :save="save"></tinymce>
         <div v-else v-html="text.content"></div>
@@ -13,7 +13,7 @@
         methods: {
             save() {
                 return new Promise((resolve, reject) => {
-                    this.$store.dispatch('updateText', { textId: this.text.id, data: this.text }).then(() => resolve()).catch(error => reject(error))    
+                    this.$store.dispatch('updateText', { textId: this.text.id, data: this.text }).then(() => resolve()).catch(error => reject(error))
                 })
             }
         }
