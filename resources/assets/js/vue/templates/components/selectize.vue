@@ -42,7 +42,7 @@
                         this.$emit('change')
                     }
                 }
-            }, this.settings));
+            }, this.settings))
 
             //Watch for key down event on input field
             $(this.$el).siblings('div').find('input').keydown((event) => {

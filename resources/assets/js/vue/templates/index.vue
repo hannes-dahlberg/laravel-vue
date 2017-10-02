@@ -17,7 +17,7 @@
         components: { headerComponent, footerComponent, loader },
         computed: {
             isAppLoading() {
-                return this.$store.getters.isAppLoading;
+                return this.$store.getters.isAppLoading
             }
         }
     }

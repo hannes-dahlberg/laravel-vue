@@ -15,7 +15,7 @@ window.axios = axios
 window.axios.defaults.headers.common = {
     'X-CSRF-TOKEN': $('meta[name=\'csrf-token\']').attr('content'),
     'X-Requested-With': 'XMLHttpRequest'
-};
+}
 
 window.Echo = new Echo({
     broadcaster: 'socket.io',

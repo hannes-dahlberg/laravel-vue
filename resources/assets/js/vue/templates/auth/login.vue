@@ -71,7 +71,7 @@
             Watching the loading state to change login form submit button loading state
             */
             loading(value) {
-                var button = $('#login_form button[type=submit]');
+                var button = $('#login_form button[type=submit]')
                 if(value == 'login') {
                     button.button('loading')
                 } else {
