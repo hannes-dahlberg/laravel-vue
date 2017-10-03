@@ -1,17 +1,14 @@
 
 <template>
-    <nav v-navbar-fold="{ threshold: 50 }" class="navbar navbar-default navbar-fixed-top margin-0">
+    <nav v-navbar-fold="{ threshold: 50 }" class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <router-link class="navbar-brand" :to="{ name: 'page.home' }">{{ $t('brand') }}</router-link>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <router-link :to="{ name: 'page.home' }" class="navbar-brand">
+                <img width="173" class="ml-3 ml-md-0" src="/img/brand.png" :alt="$t('brand')" />
+            </router-link>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <navbar :menu="menu"></navbar>
                 <navbar v-if="menuRight.length" :menu="menuRight" :right="true"></navbar>
             </div>

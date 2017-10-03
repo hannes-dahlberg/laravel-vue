@@ -4,6 +4,7 @@ html {
 }
 body {
     margin: 0px 0px 200px;
+    padding-top: 70px;
     overflow-y: scroll;
 }
 .footer {
@@ -17,17 +18,28 @@ body {
 }
 
 //Vertical divider for navbar
-@media(min-width: $grid-float-breakpoint) {
-    .nav.navbar-nav > li.divider {
-        border-left: 1px solid $dropdown-divider-bg;
-        height: $navbar-height;
+li.nav-item.divider {
+    border-color: #888;
+    border-style: solid;
+    @include media-breakpoint-down(md) {
+        width: 150px;
+        border-width: 0px 0px 2px;
+    }
+    @include media-breakpoint-up(lg) {
+        height: 2rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        padding: 0px !important;
+        border-width: 0px 2px 0px 0px;
     }
 }
-//Vertical divider for navbar in xs-mode
-@media(max-width: $grid-float-breakpoint-max) {
-    .nav.navbar-nav > li.divider {
-        @include nav-divider($dropdown-divider-bg);
-    }
+.dropdown-menu > div.divider {
+    border-top: 2px solid #888;
+}
+
+.selectize-dropdown {
+    width: 100% !important;
+    top: 37px !important;
 }
 
 .overlay {

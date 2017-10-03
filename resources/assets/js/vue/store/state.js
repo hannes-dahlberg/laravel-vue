@@ -1,21 +1,21 @@
 export default {
     appLoading: false, //State for defining if the app is in a global loading stage or not
     menu: [ //Menu to render in navigation bar
-        { name: 'home', route: 'page.home' },
+        { name: 'menu.home', route: { name: 'page.home' } },
         { divider: true }, //Menu Divider
-        { name: 'demo', menu: [
-            { name: 'events', route: 'demo.events' },
-            { name: 'parallax', route: 'demo.parallax' },
+        { name: 'menu.demo.demo', menu: [
+            { name: 'menu.demo.events', route: { name: 'demo.events' } },
+            { name: 'menu.demo.parallax', route: { name: 'demo.parallax' } },
             { divider: true }, //Menu Divider
-            { name: 'selectize', route: 'demo.selectize' },
-            { name: 'tinymce', route: 'demo.tinymce' }
+            { name: 'menu.demo.selectize', route: { name: 'demo.selectize' } },
+            { name: 'menu.demo.tinymce', route: { name: 'demo.tinymce' } }
         ]}
     ],
     guestMenu: [ //Menu only available for guests
-        { name: 'login', route: 'auth.login', position: 'right' }
+        { name: 'menu.login', route: { name: 'auth.login' }, position: 'right' }
     ],
     authMenu: [ //Menu only available for authenticated users
-        { name: 'logout', route: 'auth.logout', position: 'right' }
+        { name: 'menu.logout', route: { name: 'auth.logout' }, position: 'right' }
     ],
     languages: ['en'],
     defaultLanguage: 'en',

@@ -2,6 +2,7 @@ import VueRouter from 'vue-router'
 
 //Middleware
 import middleware from './middleware'
+import store from './store/index'
 
 //Import components
 import index from './templates/index.vue'
@@ -33,7 +34,7 @@ const router = new VueRouter({
             { path: 'login', component: authLogin, name: 'auth.login', beforeEnter: middleware.guest },
             { path: 'logout', component: authLogout, name: 'auth.logout', beforeEnter: middleware.auth },
             { path: '/', component: pageHome, name: 'page.home' },
-        ], beforeEnter: GuardsCheck([middleware.checkAuth, middleware.invalidRoute]) }
+        ], beforeEnter: GuardsCheck([middleware.invalidRoute]) }
     ]
 })
 
@@ -75,7 +76,7 @@ axios.interceptors.response.use((response) => {
 }, (error) => {
     if(error.response.status == 401) {
         store.dispatch('logout')
-        router.push({ name: 'home' })
+        router.push({ name: 'page.home' })
 
     }
 })

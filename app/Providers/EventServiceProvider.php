@@ -15,7 +15,7 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         'App\Events\PublicEvent' => [],
         'App\Events\PrivateEvent' => []
-        /*'App\Events\SomeEvent' => [
+        /*'App\Events\Event' => [
             'App\Listeners\EventListener',
         ],*/
     ];

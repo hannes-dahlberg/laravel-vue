@@ -1,14 +1,14 @@
 
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
 // Variables
 @import "variables";
 
-// Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+//Boostrap
+@import "node_modules/bootstrap/scss/bootstrap";
 
-// Font awesome
+//Font awesome
 @import "node_modules/font-awesome/scss/font-awesome";
 
 // Bootstrap social
@@ -17,10 +17,7 @@
 // Selectize
 @import "node_modules/selectize-scss/src/selectize";
 
-// Custom
-@import "margin";
-@import "padding";
-@import "text_position";
+//Custom
 @import "loader";
 @import "navbar_fold";
 @import "custom";

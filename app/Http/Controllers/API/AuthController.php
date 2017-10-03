@@ -1,7 +1,7 @@
 <?php namespace App\Http\Controllers\API;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use GuzzleHttp\Exception\ClientException;
 use Socialite;
 use App\Models\User;

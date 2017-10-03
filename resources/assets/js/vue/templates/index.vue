@@ -19,6 +19,9 @@
             isAppLoading() {
                 return this.$store.getters.isAppLoading
             }
+        },
+        mounted() {
+            console.log(this);
         }
     }
 </script>

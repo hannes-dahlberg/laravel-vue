@@ -3,13 +3,15 @@ import _ from 'lodash'
 import Vue from 'vue'
 import axios from 'axios'
 import Echo from 'laravel-echo'
-import bootstrapSass from 'bootstrap-sass'
+import jQuery from 'jquery'
+import bootstrap from 'bootstrap'
 import selectize from 'selectize'
 import Nodehelpers from 'nodehelpers'
 
 //Setting to window
 window.Vue = Vue
 window.axios = axios
+window.$ = window.jQuery = jQuery
 
 //Setting default headers for axios
 window.axios.defaults.headers.common = {
@@ -17,7 +19,11 @@ window.axios.defaults.headers.common = {
     'X-Requested-With': 'XMLHttpRequest'
 }
 
-window.Echo = new Echo({
-    broadcaster: 'socket.io',
-    host: 'socketio.app:6001'
-})
+try {
+    window.Echo = new Echo({
+        broadcaster: 'socket.io',
+        host: 'socketio.app:6001'
+    })
+} catch(error) {
+    console.error(error)
+}
