@@ -22,6 +22,7 @@ import demoTinyMCE from './templates/demo/tinymce.vue'
 
 const router = new VueRouter({
     mode: 'history',
+    linkActiveClass: 'active',
     routes: [
         { path: '/', component: index, children: [
             { path: 'error', component: errorIndex, children: [
