@@ -17,7 +17,7 @@ export default {
     authMenu: [ //Menu only available for authenticated users
         { name: 'menu.logout', route: { name: 'auth.logout' }, position: 'right' }
     ],
-    languages: ['en'],
+    languages: ['en', 'sv'],
     defaultLanguage: 'en',
     currentLanguage: null
 }

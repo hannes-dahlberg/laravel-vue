@@ -6,5 +6,6 @@ export default {
     //Set the current language
     setLanguage(state, lang) {
         state.currentLanguage = lang
+        Vue.i18n.set(lang)
     }
 }

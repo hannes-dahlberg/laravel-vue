@@ -25,9 +25,9 @@
         "selectize": "^0.12.4",
         "selectize-scss": "^0.9.2",
         "vue": "^2.4.4",
-        "vue-i18n": "^7.3.0",
         "vue-router": "^2.7.0",
         "vuex": "^2.4.1",
+        "vuex-i18n": "^1.7.0",
         "vuex-persistedstate": "^2.0.0"
     }
 }
