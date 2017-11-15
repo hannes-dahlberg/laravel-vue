@@ -1,5 +1,9 @@
 import Vuex from 'vuex'
 import createPersistedState from 'vuex-persistedstate'
+import {createVuexLoader} from 'vuex-loading'
+
+const VuexLoading = createVuexLoader({ moduleName: 'loading', componentName: 'v-loading', className: 'v-loading' });
+Vue.use(VuexLoading)
 
 //Importing state, actions and getters to use with store
 import state from './state'
@@ -17,5 +21,8 @@ export default new Vuex.Store({
     actions,
     getters,
     modules: { auth },
-    plugins: [createPersistedState()]
+    plugins: [
+        createPersistedState(),
+        VuexLoading.Store
+    ]
 })

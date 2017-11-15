@@ -1,5 +1,6 @@
 let mix = require('laravel-mix');
 let webpack = require('webpack');
+let Dotenv = require('dotenv-webpack');
 
 mix.js('resources/assets/js/app.js', 'public/js')
     .autoload({
@@ -10,6 +11,9 @@ mix.js('resources/assets/js/app.js', 'public/js')
         plugins: [
             new webpack.ProvidePlugin({
                 Popper: ['popper.js', 'default']
+            }),
+            new Dotenv({
+                path: './.env' + process.env.NODE_ENV != 'development' ? '.' + process.env.NODE_ENV : ''
             })
         ]
     });
