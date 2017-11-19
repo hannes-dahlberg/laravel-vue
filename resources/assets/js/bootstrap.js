@@ -22,7 +22,7 @@ window.axios.defaults.headers.common = {
 try {
     window.Echo = new Echo({
         broadcaster: 'socket.io',
-        host: process.env.MIX_SOCKET_IO_URL
+        host: process.env.SOCKET_IO_URL
     })
 } catch(error) {
     console.error(error)

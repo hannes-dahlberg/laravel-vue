@@ -8,6 +8,7 @@ const app = new Vue({
     el: '#app',
     store,
     router,
+    i18n: translations,
     mounted() {
         //Maker sure to add auth tokens to headers (if existing)
         this.$store.dispatch('addTokenToHeaders')

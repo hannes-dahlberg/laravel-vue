@@ -1,12 +1,11 @@
-import vuexI18n from 'vuex-i18n'
+import Vue from 'vue'
 import store from './store/index'
-
-Vue.use(vuexI18n.plugin, store);
+import VueI18n from 'vue-i18n'
 
 import en from '../lang/en'
 import sv from '../lang/sv'
 
-Vue.i18n.add('en', en);
-Vue.i18n.add('sv', sv);
-
-Vue.i18n.set(store.getters.getLanguage);
+export default new VueI18n({
+    locale: store.getters.getLanguage,
+    messages: { en, sv }
+})

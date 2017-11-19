@@ -13,7 +13,7 @@ mix.js('resources/assets/js/app.js', 'public/js')
                 Popper: ['popper.js', 'default']
             }),
             new Dotenv({
-                path: './.env' + process.env.NODE_ENV != 'development' ? '.' + process.env.NODE_ENV : ''
+                path: './.env' + (process.env.NODE_ENV != 'development' ? '.' + process.env.NODE_ENV : '')
             })
         ]
     });

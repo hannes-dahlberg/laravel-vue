@@ -22,7 +22,9 @@ export default new Vuex.Store({
     getters,
     modules: { auth },
     plugins: [
-        createPersistedState(),
+        createPersistedState({
+            key: process.env.APP_NAME
+        }),
         VuexLoading.Store
     ]
 })
