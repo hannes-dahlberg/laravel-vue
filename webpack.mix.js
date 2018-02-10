@@ -1,6 +1,6 @@
-let mix = require('laravel-mix');
-let webpack = require('webpack');
-let Dotenv = require('dotenv-webpack');
+let mix = require('laravel-mix')
+let webpack = require('webpack')
+let Dotenv = require('dotenv-webpack')
 
 mix.js('resources/assets/js/app.js', 'public/js')
     .autoload({
@@ -16,10 +16,12 @@ mix.js('resources/assets/js/app.js', 'public/js')
                 path: './.env' + (process.env.NODE_ENV != 'development' ? '.' + process.env.NODE_ENV : '')
             })
         ]
-    });
+    })
 
 if (mix.inProduction) {
     mix.options({
         uglify: false
-    }).version();
+    }).version()
+} else {
+    mix.sourceMaps()
 }
