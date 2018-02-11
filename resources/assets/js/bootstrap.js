@@ -7,11 +7,15 @@ import jQuery from 'jquery'
 import bootstrap from 'bootstrap'
 import selectize from 'selectize'
 import Nodehelpers from 'nodehelpers'
+import popperJs from 'popper.js'
 
 //Setting to window
+window._ = _
+window.axios = axios
 window.Vue = Vue
 window.axios = axios
 window.$ = window.jQuery = jQuery
+window.Popper = popperJs.default
 
 //Setting default headers for axios
 window.axios.defaults.headers.common = {

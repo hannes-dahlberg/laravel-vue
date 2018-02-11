@@ -3,15 +3,9 @@ let webpack = require('webpack')
 let Dotenv = require('dotenv-webpack')
 
 mix.js('resources/assets/js/app.js', 'public/js')
-    .autoload({
-        jquery: ['$', 'jQuery', 'window.$', 'window.jQuery']
-    })
     .sass('resources/assets/sass/app.scss', 'public/css')
     .webpackConfig({
         plugins: [
-            new webpack.ProvidePlugin({
-                Popper: ['popper.js', 'default']
-            }),
             new Dotenv({
                 path: './.env' + (process.env.NODE_ENV != 'development' ? '.' + process.env.NODE_ENV : '')
             })

@@ -6,16 +6,16 @@
 @import "variables";
 
 //Boostrap
-@import "node_modules/bootstrap/scss/bootstrap";
+@import '~bootstrap/scss/bootstrap';
 
 //Font awesome
-@import "node_modules/font-awesome/scss/font-awesome";
+@import "~/font-awesome/scss/font-awesome";
 
 // Bootstrap social
-@import "node_modules/bootstrap-social/bootstrap-social.scss";
+@import "~/bootstrap-social/bootstrap-social.scss";
 
 // Selectize
-@import "node_modules/selectize-scss/src/selectize";
+@import "~/selectize-scss/src/selectize";
 
 //Custom
 @import "loader";
