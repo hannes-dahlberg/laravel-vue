@@ -5,37 +5,17 @@ use App\Models\User;
 use Hash;
 
 class MakeUser extends Command {
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
     protected $signature = 'make:user
         {email : The email of the new user}
         {--password : Get prompted for password while otherwise auto generate password }
         {--role= : Specify role for new user. "admin" or "user" (default) }';
 
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
     protected $description = 'Create a new user by specifying email and (if provided) password';
 
-    /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
     public function __construct() {
         parent::__construct();
     }
 
-    /**
-     * Execute the console command.
-     *
-     * @return mixed
-     */
     public function handle() {
         $email = $this->argument('email');
 

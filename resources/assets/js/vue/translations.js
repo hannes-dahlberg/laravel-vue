@@ -1,24 +1,11 @@
 import Vue from 'vue'
+import store from './store/index'
 import VueI18n from 'vue-i18n'
 
-const translations = {
-    'en': {
-        'brand': 'DWIK',
-        'menu': {
-            'home': 'Home',
-            'about': 'About Us',
-            'contact': 'Contact',
-            'logout': 'Logout',
-            'auth': {
-                'login': 'Login',
-                'logout': 'Logout'
-            }
-        }
-    }
-}
+import en from '../lang/en'
+import sv from '../lang/sv'
 
-Vue.use(VueI18n)
-Vue.config.lang = 'en'
-Object.keys(translations).forEach(lang => {
-    Vue.locale(lang, translations[lang])
+export default new VueI18n({
+    locale: store.getters.getLanguage,
+    messages: { en, sv }
 })

@@ -23,7 +23,6 @@ class AuthCheck {
             Auth::login($user);
         }
 
-        //Continue with request no matter what
         return $next($request);
     }
 }

@@ -9,5 +9,8 @@ export default {
     authMenu: [
         { divider: true },
         { name: 'logout', route: 'auth.logout', position: 'right' }
-    ]
+    ],
+    languages: ['en', 'sv'],
+    defaultLanguage: 'en',
+    currentLanguage: null
 }

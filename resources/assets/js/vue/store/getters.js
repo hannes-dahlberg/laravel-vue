@@ -6,8 +6,12 @@ export default {
     getMenu: (state, getters) => {
         return state.menu.concat(getters.isAuth ? state.authMenu : state.guestMenu)
     },
-    //Read from local storage
-    readLocalStorage: () => (key) => {
-        return JSON.parse(localStorage.getItem(key))
+    getLanguage: (state) => {
+        //If no language is set, use default
+        if(!state.currentLanguage) {
+            state.currentLanguage = state.defaultLanguage
+        }
+
+        return state.currentLanguage
     }
 }

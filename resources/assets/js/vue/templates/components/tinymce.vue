@@ -11,7 +11,7 @@
                 and last check if the value of the tinyMCE object is not the same as the new value. Otherwise the tinyMCE
                 object will be updated each time itself is edited. We only want it to update on outside changes*/
                 if(tinymce.get($(this.$el).attr('id')) && value && tinymce.get($(this.$el).attr('id')).getContent() !== value) {
-                    tinymce.get($(this.$el).attr('id')).setContent(value);
+                    tinymce.get($(this.$el).attr('id')).setContent(value)
                 }
             },
             disabled() {
@@ -20,8 +20,8 @@
         },
         mounted() {
             //Set id to editor
-            var id = this.randomString(8);
-            $(this.$el).attr('id', id);
+            var id = this.randomString(8)
+            $(this.$el).attr('id', id)
 
             //Initiate TinyMCE on textarea
             tinymce.init({
@@ -44,7 +44,7 @@
                 },
                 setup: (editor) => {
                     if(this.save) {
-                        var that = this;
+                        var that = this
                         editor.addButton('saveButton', {
                             text: 'Save',
                             onclick: function() {
@@ -52,7 +52,7 @@
                                 this.disabled(true)
                                 that.$emit('input', editor.getContent())
                                 that.save().then(() => {
-                                    this.text('Save');
+                                    this.text('Save')
                                     this.disabled(false)
                                 })
                             }
@@ -63,12 +63,12 @@
                         /*When the TinyMCE editor is changed the vue directive set method
                          is called to updated the vue object as well*/
                          this.$emit('input', editor.getContent())
-                    });
+                    })
                     editor.on('init', (e) => {
                         editor.setContent(this.value)
                     })
                 }
-            });
+            })
         },
         methods: {
             randomString(length) {
