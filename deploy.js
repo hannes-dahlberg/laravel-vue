@@ -1,5 +1,5 @@
 require('dotenv').config({
-    path: './.env' + (process.env.NODE_ENV != 'development' ? '.' + process.env.NODE_ENV : '')
+    path: './.env'
 })
 
 var exec = require('child_process').exec;
