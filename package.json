@@ -28,6 +28,8 @@
         "popper.js": "^1.12.9",
         "selectize": "^0.12.4",
         "selectize-scss": "^0.9.2",
+        "ts-loader": "^3.5.0",
+        "typescript": "^2.7.1",
         "vue": "^2.5.13",
         "vue-i18n": "^7.4.2",
         "vue-router": "^3.0.1",
