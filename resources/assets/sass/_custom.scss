@@ -13,11 +13,13 @@ body {
     height: 200px;
     padding: 10px;
     background-color: $footer-bg;
-    color: #D9DAD9;
     font-size: 14pt;
     border: 1px solid $footer-border-color;
     position: absolute;
     bottom: 0px;
+    &, a {
+        color: #D9DAD9;
+    }
 }
 
 //Vertical divider for navbar

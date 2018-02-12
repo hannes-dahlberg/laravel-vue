@@ -28,10 +28,10 @@ const router = new VueRouter({
         { path: '/', component: index, children: [
             { path: 'login', component: authLogin, name: 'auth.login', beforeEnter: middleware.guest },
             { path: 'logout', component: authLogout, name: 'auth.logout', beforeEnter: middleware.auth },
-            { path: '/home', component: pages, name: 'page.home', hash: 'home' },
-            { path: '/about', component: pages, name: 'page.about', hash: 'about' },
-            { path: '/contact', component: pages, name: 'page.contact', hash: 'contact' },
-        ], beforeEnter: GuardsCheck([middleware.checkAuth, middleware.invalidRoute]) }
+            { path: '/home', component: pages, name: 'home', hash: 'home' },
+            { path: '/about', component: pages, name: 'about', hash: 'about' },
+            { path: '/contact', component: pages, name: 'contact', hash: 'contact' },
+        ], beforeEnter: GuardsCheck([middleware.invalidRoute]) }
     ]
 })
 
@@ -73,7 +73,7 @@ axios.interceptors.response.use((response) => {
 }, (error) => {
     if(error.response.status == 401) {
         store.dispatch('logout')
-        router.push({ name: 'page.home' })
+        router.push({ name: 'home' })
 
     }
 })

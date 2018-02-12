@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
             <div class="col-12 col-md-6 mx-auto">
                 <div class="card">
@@ -29,26 +29,6 @@
                                 </span>
                             </p>
                         </form>
-                        <hr />
-                        <p class="text-center">Or</p>
-                        <hr />
-                        <div class="overlay overlay-container">
-                            <a href="/api/auth/linkedin" class="mb-3 btn btn-block btn-social btn-facebook text-center" :disabled="loading">
-                                <span class="fa fa-facebook"></span> Sign in with Facebook
-                            </a>
-                            <a href="/api/auth/linkedin" class="mb-3 btn btn-block btn-social btn-linkedin text-center" :disabled="loading">
-                                <span class="fa fa-linkedin"></span> Sign in with LinkedIn
-                            </a>
-                            <a href="/api/auth/google" class="mb-3 btn btn-block btn-social btn-google text-center" :disabled="loading">
-                                <span class="fa fa-google"></span> Sign in with Google
-                            </a>
-                            <a href="/api/auth/github" class="btn btn-block btn-social btn-github text-center" :disabled="loading">
-                                <span class="fa fa-github"></span> Sign in with GitHub
-                            </a>
-                            <div v-if="loading == 'social'" class="overlay overlay-body text-center">
-                                <loader></loader>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -88,7 +68,7 @@
                 this.loading = 'social'
                 this.error = false
                 this.$store.dispatch('socialAuth', this.$route.query).then(() => {
-                    this.$router.push({ name: 'page.home' })
+                    this.$router.push({ name: 'home' })
                 }).catch(error => {
                     this.error = 'social'
                     this.loading = false

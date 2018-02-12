@@ -22,12 +22,3 @@ window.axios.defaults.headers.common = {
     'X-CSRF-TOKEN': $('meta[name=\'csrf-token\']').attr('content'),
     'X-Requested-With': 'XMLHttpRequest'
 }
-
-try {
-    window.Echo = new Echo({
-        broadcaster: 'socket.io',
-        host: process.env.SOCKET_IO_URL
-    })
-} catch(error) {
-    console.error(error)
-}

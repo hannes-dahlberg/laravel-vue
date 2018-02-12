@@ -1,31 +1,29 @@
 <template>
-    <nav class="navbar navbar-default navbar-fixed-top margin-0 padding-xs-right-0 padding-sm-right-30 padding-md-right-30 padding-lg-right-30">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="" class="navbar-brand hidden-sm hidden-md hidden-lg">
-                    {{ $t('menu.' + $route.name) }}
-                </a>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <nav v-navbar-fold="{ threshold: 50 }" class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <router-link :to="{ name: 'home' }" class="navbar-brand">
+                {{ $t('brand') }}
+            </router-link>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <navbar :menu="menu"></navbar>
+                <navbar v-if="menuRight.length" :menu="menuRight" :right="true"></navbar>
             </div>
         </div>
     </nav>
 </template>
 <script>
     import navbar from './navbar/navbar.vue'
-
     export default {
         components: { navbar },
         computed: {
             menu() {
-                return this.$store.getters.getMenu
+                return this.$store.getters.getMenu.filter(item => item.position == 'left' || !item.position)
+            },
+            menuRight() {
+                return this.$store.getters.getMenu.filter(item => item.position == 'right')
             }
         },
         methods: {
@@ -33,7 +31,6 @@
             activeSubMenu(menuItem) {
                 //No menu exists, return false
                 if(!menuItem.menu) { return false }
-
                 //Active if a submenu child is the current route
                 return menuItem.menu.findIndex(subMenu => this.$route.name == subMenu.route) != -1 ? true : false
             }

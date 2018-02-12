@@ -6,7 +6,7 @@ export default {
         if(to.name) {
             next()
         } else {
-            next({ name: 'index' })
+            next({ name: 'home' })
         }
     },
     //Middleware for authenticated users

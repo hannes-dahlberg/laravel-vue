@@ -1,6 +1,6 @@
 <template>
-    <div class="container margin-top-100">
-        <text-component v-for="text in texts" :text="text"></text-component>
+    <div class="container mt-5">
+        <text-component v-for="text in texts" :text="text" :key="text.id"></text-component>
     </div>
 </template>
 <script>
