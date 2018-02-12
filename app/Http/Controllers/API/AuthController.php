@@ -11,7 +11,7 @@ class AuthController extends Controller {
         $http = new \GuzzleHttp\Client;
 
         //Make request to itself for token using provided username and password
-        $token = json_decode((string) $http->post(env('APP_URL', 'http://laravel-vue.app'). '/oauth/token', [
+        $token = json_decode((string) $http->post(env('APP_URL', 'http://laravel-vue.test'). '/oauth/token', [
             'form_params' => [
                 'grant_type' => 'password',
                 'client_id' => env('PASSPORT_PASSWORD_CLIENT_ID', 'client-id'),
@@ -23,7 +23,7 @@ class AuthController extends Controller {
         ])->getBody(), true);
 
         //USing token to get user data
-        $user = json_decode((string) $http->get(env('APP_URL', 'http://laravel-vue.app'). '/api/auth/user', [
+        $user = json_decode((string) $http->get(env('APP_URL', 'http://laravel-vue.test'). '/api/auth/user', [
             'headers' => [
                 'Authorization' => 'Bearer '. $token['access_token']
             ]

@@ -15,9 +15,9 @@ Well installed run: (unix)`php vendor/bin/homestead make` (win)`vendor\\bin\\hom
 
 Now you should be able to start your Vagrant dev-box with `vagrant up` and after initiated (takes a while the first time) you can SSH into your box with `vagrant ssh` and run `php artisan migrate` to create mysql tables
 
-Add "192.168.10.10 laravel-vue.app" to your system hosts file, located at (unix) `/etc/hosts` (win)`c:\Windows\System32\Drivers\etc\hosts` for remote access
+Add "192.168.10.10 laravel-vue.test" to your system hosts file, located at (unix) `/etc/hosts` (win)`c:\Windows\System32\Drivers\etc\hosts` for remote access
 
-Now visit http://laravel-vue.app on your local machine to see the server in action
+Now visit http://laravel-vue.test on your local machine to see the server in action
 
 ## Passport
 The repo comes prepared with Passport (API authentication), you just need to install it. After successfully running `php artisan migrate` on the dev-box (migration) Install Passport using the command `php artisan passport:install` (still on dev-box). The console will print "Password grant client created successfully." followed by "Client ID" and "Client Secret".

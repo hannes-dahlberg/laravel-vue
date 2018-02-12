@@ -1,5 +1,5 @@
 {
-	"authHost": "http://laravel-vue.app",
+	"authHost": "http://laravel-vue.test",
 	"authEndpoint": "/broadcasting/auth",
 	"clients": [
 		{
