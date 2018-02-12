@@ -19,7 +19,8 @@ export default new Vuex.Store({
     modules: { auth },
     plugins: [
         createPersistedState({
-            key: process.env.APP_NAME
+            key: process.env.APP_NAME,
+            paths: ['auth', 'currentLanguage']
         })
     ]
 })
