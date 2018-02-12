@@ -45,7 +45,7 @@ export default {
         addTokenToHeaders({ getters }) {
             if(!getters.getToken) { return; }
             //Setting the Echo header to include token needed when listening on private channels
-            if(Echo) {
+            if(window.Echo) {
                 Echo.connector.options.auth.headers['Authorization'] = 'Bearer ' + getters.getToken
             }
 

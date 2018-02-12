@@ -1,7 +1,7 @@
 <template>
     <div>
         <header-component></header-component>
-        <div v-if="$anyLoading()" class="text-center margin-top-100">
+        <div v-if="$loading.anyLoading" class="text-center margin-top-100">
             <loader></loader>
         </div>
         <router-view v-else></router-view>
