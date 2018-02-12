@@ -7,7 +7,7 @@ mix.ts('resources/assets/js/app.js', 'public/js')
     .webpackConfig({
         plugins: [
             new Dotenv({
-                path: './.env' + (process.env.NODE_ENV != 'development' ? '.' + process.env.NODE_ENV : '')
+                path: './.env'
             })
         ]
     })
